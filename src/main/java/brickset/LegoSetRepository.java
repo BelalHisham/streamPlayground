@@ -17,6 +17,12 @@ public class LegoSetRepository extends Repository<LegoSet> {
 
     // Method 1
 
+    /**
+     * Prints the names of LEGO sets in alphabetical order
+     *
+     *
+     */
+
     public  void namesInAlphabeticalOrder (){
         getAll().stream()
                 .map(LegoSet::getName)
@@ -26,6 +32,13 @@ public class LegoSetRepository extends Repository<LegoSet> {
 
 
     // Method 2
+
+    /**
+     * Returns the maximum piece of LEGO sets
+     *
+     * return long
+     */
+
     public  long maximumPieces (){
       return   getAll().stream()
                 .mapToLong(LegoSet::getPieces)
@@ -34,6 +47,12 @@ public class LegoSetRepository extends Repository<LegoSet> {
     }
 
     // Method 3
+
+    /**
+     * Returns the first LEGO number starts with number 2
+     *
+     * return String
+     */
     public Optional<LegoSet> firstNumberStartsWithTwo (){
         return getAll().stream()
                 .filter(LegoSet -> LegoSet.getNumber().charAt(0) == '2')
@@ -44,6 +63,12 @@ public class LegoSetRepository extends Repository<LegoSet> {
 
 
     // Method 4
+
+    /**
+     * Returns the longest number of characters of LEGO theme
+     *
+     * return String
+     */
     public String longestTheme (){
         return   getAll().stream()
                 .map(LegoSet::getTheme)
@@ -55,6 +80,11 @@ public class LegoSetRepository extends Repository<LegoSet> {
 
 
     // Method 5
+
+    /**
+     * Prints the subtheme of each LEGO in  ascending order
+     *
+     */
     public  void printSubthemeOfEachLegoInAscendingOrder (){
         getAll().stream()
                 .map(LegoSet::getSubtheme)
